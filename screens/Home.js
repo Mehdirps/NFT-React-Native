@@ -7,10 +7,13 @@ import { NFTCard, FocusedStatusBar, HomeHeader } from '../components'
 
 const Home = () => {
     return (
+        // Zone de sécurité d'affichage selon écran
         <SafeAreaView style={{ flex: 1 }}>
+            {/* Barre de sécurité pour zone notification etc.. du téléphone */}
             <FocusedStatusBar backgroundColor={COLORS.primary} />
             <View style={{ flex: 1 }}>
                 <View style={{ zIndex: 0 }}>
+                    {/* Liste d'object */}
                     <FlatList
                         data={NFTData}
                         renderItem={({ item }) => <NFTCard data={item} />}
@@ -19,6 +22,7 @@ const Home = () => {
                         ListHeaderComponent={<HomeHeader />}
                     />
                 </View>
+                {/* Background page d'accueil */}
                 <View style={{
                     position: 'absolute',
                     top: 0,

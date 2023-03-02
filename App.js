@@ -3,9 +3,11 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from 'expo-font'
 import Home from "./screens/Home";
 import Details from "./screens/Details";
+import { HomeHeader } from "./components";
 
 const Stack = createStackNavigator();
 
+// Définition du thème de l'application
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -16,6 +18,7 @@ const theme = {
 
 const App = () => {
 
+  // const des Fonts
   const [loaded] = useFonts({
     InterBold: require("./assets/fonts/Inter-Bold.ttf"),
     InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
@@ -23,8 +26,10 @@ const App = () => {
     InterRegular: require("./assets/fonts/Inter-Regular.ttf"),
     InterLight: require("./assets/fonts/Inter-Light.ttf"),
   });
+  // Condition chargement des fonts
   if (!loaded) return null;
   return (
+    // Navigation dans l'application avec route par default
     <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />

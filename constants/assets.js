@@ -1,3 +1,4 @@
+// Liste des assets pour exportation
 import badge from "../assets/icons/badge.png";
 import eth from "../assets/icons/eth.png";
 import heart from "../assets/icons/heart.png";
